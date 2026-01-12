@@ -229,9 +229,9 @@
 
         switch (modalType)
         {
-            case "TheLoai":
-                var newLoaiVi = new TheLoai { Id = id, Ten = newItemTen, Mota = newItemMota };
-                await apiService.PostAsync<TheLoai, TheLoai>("TheLoai", newLoaiVi);
+            case "TacGia":
+                var newLoaiVi = new TacGia { Id = id, Ten = newItemTen, Mota = newItemMota };
+                await apiService.PostAsync<TacGia, TacGia>("TacGia", newLoaiVi);
                 await LoadDropdownData();
                 break;
             case "NhaXuatBan":
