@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API.Migrations
 {
     /// <inheritdoc />
-    public partial class ver1 : Migration
+    public partial class Bookstore : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -616,7 +616,7 @@ namespace API.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_chiTietProducts_TheLoaiId",
                 table: "chiTietProducts",
-                column: "TacGiaId");
+                column: "TheLoaiId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_combos_LoaiId",

@@ -152,7 +152,7 @@ namespace API.Migrations
                     b.Property<int>("Soluong")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("TacGiaId")
+                    b.Property<Guid?>("TheLoaiId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("TrangThai")
@@ -168,7 +168,7 @@ namespace API.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.HasIndex("TacGiaId");
+                    b.HasIndex("TheLoaiId");
 
                     b.ToTable("chiTietProducts");
                 });
@@ -709,7 +709,7 @@ namespace API.Migrations
                     b.ToTable("taiKhoans");
                 });
 
-            modelBuilder.Entity("API.Models.TacGia", b =>
+            modelBuilder.Entity("API.Models.TheLoai", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -799,9 +799,9 @@ namespace API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("API.Models.TacGia", "TacGia")
+                    b.HasOne("API.Models.TheLoai", "TheLoai")
                         .WithMany("chitietproducts")
-                        .HasForeignKey("TacGiaId");
+                        .HasForeignKey("TheLoaiId");
 
                     b.Navigation("ChatLieu");
 
@@ -811,7 +811,7 @@ namespace API.Migrations
 
                     b.Navigation("Product");
 
-                    b.Navigation("TacGia");
+                    b.Navigation("TheLoai");
                 });
 
             modelBuilder.Entity("API.Models.Combo", b =>
@@ -956,13 +956,13 @@ namespace API.Migrations
                         .WithMany("Products")
                         .HasForeignKey("NhaXuatBanId");
 
-                    b.HasOne("API.Models.TacGia", "TacGia")
+                    b.HasOne("API.Models.TacGia", "TheLoai")
                         .WithMany("MonAns")
                         .HasForeignKey("TacGiaId");
 
                     b.Navigation("NhaXuatBan");
 
-                    b.Navigation("TacGia");
+                    b.Navigation("TheLoai");
                 });
 
             modelBuilder.Entity("API.Models.TaiKhoan", b =>
@@ -1081,7 +1081,7 @@ namespace API.Migrations
                     b.Navigation("MonAns");
                 });
 
-            modelBuilder.Entity("API.Models.TacGia", b =>
+            modelBuilder.Entity("API.Models.TheLoai", b =>
                 {
                     b.Navigation("chitietproducts");
                 });
